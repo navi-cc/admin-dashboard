@@ -1,0 +1,79 @@
+@import url('fonts/fonts.css');
+
+:root {
+    --primary-color: #5b21b6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    height: 100dvh;
+
+    font-family: 'Roboto Regular';
+    color: #f5f5f5;
+}
+
+svg {
+    aspect-ratio: 1;
+    color: white;
+    width: 50px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.sidebar {
+    background-color: var(--primary-color);
+}
+
+.dashboard {
+    display: grid;
+    gap: 50px 0px;
+    margin: 20px 0px 0px 20px;
+    font-family: 'Roboto Bold', sans-serif, system-ui;
+}
+
+.first-row {
+    font-size: 2rem;
+}
+
+.first-row li {
+    gap: 0px 10px;
+}
+
+
+.second-row, .third-row {
+    display: grid;
+    gap: 15px 0px;
+    font-size: 1.2rem;
+    margin-left: 12px;
+}
+
+.second-row .icon, .third-row .icon {
+    width: 30px;
+}
+
+.second-row li, .third-row li {
+    gap: 0px 20px;
+}
+
+
+
+
+
+
+
+
+
+
