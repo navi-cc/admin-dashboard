@@ -169,6 +169,13 @@ li {
     font-size: 1.7rem;
 }
 
+.button-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .button-container > button {
     background-color: #6d28d9;
     border-radius: 40px;
