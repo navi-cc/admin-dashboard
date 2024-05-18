@@ -1,8 +1,12 @@
 @import url('assets/fonts/fonts.css');
 
 :root {
-    --primary-color: #5b21b6;
+    --bg-color-1: #5b21b6;
+    --bg-color-2: #faf4f4;
+
     --text-color-1:  #050505;
+
+    --shadow-bg: rgb(0 0 0 / 50%) 2px 4px 6px 0px; 
 }
 
 * {
@@ -34,7 +38,7 @@ li {
 
 
 .sidebar {
-    background-color: var(--primary-color);
+    background-color: var(--bg-color-1);
 }
 
 .dashboard {
@@ -85,8 +89,8 @@ li {
 
     padding: 10px 40px 20px;
 
-    background-color: #faf4f4;
-    box-shadow: rgb(0 0 0 / 50%) 2px 4px 6px 0px;
+    background-color: var(--bg-color-2);
+    box-shadow: var(--shadow-bg);
 }
 
 .search-bar-container {
@@ -177,7 +181,7 @@ li {
 }
 
 .button-container > button {
-    background-color: var(--primary-color);
+    background-color: var(--bg-color-1);
     border-radius: 40px;
     border: none;
 
@@ -196,7 +200,7 @@ li {
 
 .main-content {
     display: grid;
-    grid-template-columns: .9fr auto;
+    grid-template-columns: 1fr .3fr;
 
     padding: 20px;
     gap: 0px 20px;
@@ -223,10 +227,10 @@ li {
     border-radius: 10px;
     border-left-width: 10px;
     border-left-style: solid;
-    border-left-color: var(--primary-color);
+    border-left-color: var(--bg-color-1);
 
-    box-shadow: rgb(0 0 0 / 50%) 2px 4px 6px 0px;
-    background-color: #f5f5f5;
+    box-shadow: var(--shadow-bg);
+    background-color: var(--bg-color-2);
 
 }
 
@@ -235,9 +239,6 @@ li {
     color: var(--text-color-1);
 }
 
-#card-info {
-    color: #696969;
-}
 
 .card-btn {
     display: flex;
@@ -252,93 +253,71 @@ li {
     color: #050505;
 }
 
-.announcement-section {
-    display: flex;
-    flex-direction: column;
-}
+
+
 
 .announcement {
     display: flex;
     flex-direction: column;
-
-    padding: 20px 0px;
-
-    border-radius: 10px;
-
-    box-shadow: rgb(0 0 0 / 50%) 2px 4px 6px 0px;
-    background-color: #f5f5f5;
-
-    color: #696969;
 }
 
-.announcement .row-1, .announcement .row-2,
-.announcement .row-3 {
-    margin-left: 40px;
-}
+.announcement > span {
+    font-size: 1.5rem;
+    color: var(--text-color-1);
+}   
 
-.announcement > div {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
 
-    width: 165px;
-   
-    overflow: hidden;
-}
-
-.announcement-title {
+#announcement-title {
     font-size: .8rem;
     color: var(--text-color-1);
 }
 
-.announcement-info {
-    font-family: 'Roboto Regular', 'sans-serif', 'system-ui';
+#announcement-info {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+
     font-size: .65rem;
-    text-overflow: ellipsis;
 }
 
+.announcement .row-2 {
+    position: relative;
+}
+.announcement .row-2::before {
+    top: -10px;
+}
 
-.announcement > .row-2::before,
-.announcement > .row-3::before {
+.announcement .row-2::after {
+    bottom: -20px;
+}
+
+.announcement .row-2::before,
+.announcement .row-2::after {
+    position: absolute;
     display: inline-block;
     
     content: '';
     background-color: #696969;
     height: 1px;
     width: 100%;
-
-    margin-bottom: 2.1px;
 }
+
 
 .trending {
     margin-top: 30px;
 }
 
-.trending > span {
-    font-size: .8rem;
-    color: var(--text-color-1);
-}
 
 .trending, .trending .user {
     display: flex;
     flex-direction: column;
 }
 
-.trending .container {
-    display: grid;
-    gap: 30px 0px;
-
-    padding: 20px 0px;
-
-    border-radius: 10px;
-    background-color: #f5f5f5;
-    box-shadow: rgb(0 0 0 / 50%) 2px 4px 6px 0px;
-}
 
 .trending .row-1, .trending .row-2,
 .trending .row-3 {
-    display: flex;
-    margin-left: 40px;
+    display: flex; 
     gap: 0px 10px;
 }
 
@@ -356,17 +335,30 @@ li {
 
 
 
+.trending .container, 
+.announcement .container {
+    display: grid;
+    gap: 30px 0px;
 
+    padding: 15px;
 
+    border-radius: 10px;
+    background-color: var(--bg-color-2);
+    box-shadow: var(--shadow-bg);
+}
 
+#card-info, #announcement-info {
+    color: #696969;
+}
 
 .card-column-1 > span, 
-.announcement-section > span, .trending > span {
+.trending > span {
     color: var(--text-color-1);
     font-size: 1.5rem;
 }
 
-.card-column-1, .announcement-section, .trending {
+.card-column-1, .trending,
+.announcement {
     gap: 10px 0px;
 }
 
