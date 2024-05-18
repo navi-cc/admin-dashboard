@@ -256,6 +256,7 @@ li {
 
 
 
+
 .announcement {
     display: flex;
     flex-direction: column;
@@ -302,6 +303,9 @@ li {
     height: 1px;
     width: 100%;
 }
+
+
+
 
 
 .trending {
@@ -361,7 +365,6 @@ li {
 .announcement {
     gap: 10px 0px;
 }
-
 
 .second-row > li , .third-row > li,
 .search-bar-container > input, 
